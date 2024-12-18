@@ -2,7 +2,7 @@
 
 /*
   Author: Martin Eden
-  Last mod.: 2024-12-17
+  Last mod.: 2024-12-18
 */
 
 #include <me_WorkMemory.h>
@@ -42,6 +42,27 @@ TBool me_WorkMemory::SetByte(
   return true;
 }
 
+// ( TOperation wrappers
+
+TBool me_WorkMemory::Op_GetByte(
+  TAddress Data,
+  TAddress Addr
+)
+{
+  return GetByte((TUint_1 *) Data, Addr);
+}
+
+TBool me_WorkMemory::Op_SetByte(
+  TAddress Data,
+  TAddress Addr
+)
+{
+  return SetByte(*(TUint_1 *) Data, Addr);
+}
+
+// )
+
 /*
   2024-12-17
+  2024-12-18
 */

@@ -2,7 +2,7 @@
 
 /*
   Author: Martin Eden
-  Last mod.: 2024-12-17
+  Last mod.: 2024-12-18
 */
 
 /*
@@ -26,8 +26,14 @@ namespace me_WorkMemory
 
   // Set memory to byte value
   TBool SetByte(TUint_1 Byte, TAddress Addr);
+
+  // ( Wrapping as TOperation
+  TBool Op_GetByte(TAddress Data, TAddress Addr);
+  TBool Op_SetByte(TAddress Data, TAddress Addr);
+  // )
 }
 
 /*
   2024-12-17
+  2024-12-18
 */
