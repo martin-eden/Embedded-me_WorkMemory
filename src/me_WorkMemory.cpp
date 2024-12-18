@@ -7,12 +7,7 @@
 
 #include <me_WorkMemory.h>
 
-#include <me_UnoAddresses.h>
-
 using namespace me_WorkMemory;
-
-using
-  me_UnoAddresses::RamMaxAddr;
 
 // Get byte lol
 TBool me_WorkMemory::GetByte(
@@ -20,7 +15,7 @@ TBool me_WorkMemory::GetByte(
   TAddress Addr
 )
 {
-  if (Addr > RamMaxAddr)
+  if (Addr > MaxAddr)
     return false;
 
   *Byte = *(TUint_1 *) Addr;
@@ -34,7 +29,7 @@ TBool me_WorkMemory::SetByte(
   TAddress Addr
 )
 {
-  if (Addr > RamMaxAddr)
+  if (Addr > MaxAddr)
     return false;
 
   *(TUint_1 *) Addr = Byte;

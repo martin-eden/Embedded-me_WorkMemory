@@ -21,6 +21,11 @@
 
 namespace me_WorkMemory
 {
+  // ( Memory limits (microprocessor-dependent)
+  const TUint_2 Size = 256 + 2 * 1024;
+  const TAddress MaxAddr = Size - 1;
+  // )
+
   // Get byte from memory
   TBool GetByte(TUint_1 * Byte, TAddress Addr);
 
