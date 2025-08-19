@@ -1,38 +1,55 @@
-// WorkMemory implementation
+// Work memory interface implementation
 
 /*
   Author: Martin Eden
-  Last mod.: 2024-12-18
+  Last mod.: 2025-08-19
 */
 
 #include <me_WorkMemory.h>
 
 using namespace me_WorkMemory;
 
-// Get byte lol
-TBool me_WorkMemory::GetByte(
-  TUint_1 * Byte,
-  TAddress Addr
+// Maximum memory address (for ATmega328)
+const TAddress MaxAddress = (256 + 2 * 1024) - 1;
+
+/*
+  Check memory address
+*/
+TBool me_WorkMemory::CheckAddress(
+  TAddress Address
 )
 {
-  if (Addr > MaxAddr)
+  return (Address <= MaxAddress);
+}
+
+/*
+  Get byte from address
+*/
+TBool me_WorkMemory::GetByteFrom(
+  TUint_1 * ByteValue,
+  TAddress Address
+)
+{
+  if (!CheckAddress(Address))
     return false;
 
-  *Byte = *(TUint_1 *) Addr;
+  Freetown::GetByteFrom(ByteValue, Address);
 
   return true;
 }
 
-// Set byte lol
-TBool me_WorkMemory::SetByte(
-  TUint_1 Byte,
-  TAddress Addr
+/*
+  Set byte at address
+*/
+TBool me_WorkMemory::SetByteTo(
+  TAddress Address,
+  TUint_1 ByteValue
 )
 {
-  if (Addr > MaxAddr)
+  if (!CheckAddress(Address))
     return false;
 
-  *(TUint_1 *) Addr = Byte;
+  Freetown::SetByteTo(Address, ByteValue);
 
   return true;
 }
@@ -41,23 +58,23 @@ TBool me_WorkMemory::SetByte(
 
 TBool me_WorkMemory::Op_GetByte(
   TAddress Data,
-  TAddress Addr
+  TAddress Address
 )
 {
-  return GetByte((TUint_1 *) Data, Addr);
+  return GetByteFrom((TUint_1 *) Data, Address);
 }
 
 TBool me_WorkMemory::Op_SetByte(
   TAddress Data,
-  TAddress Addr
+  TAddress Address
 )
 {
-  return SetByte(*(TUint_1 *) Data, Addr);
+  return SetByteTo(Address, *(TUint_1 *) Data);
 }
 
 // )
 
 /*
-  2024-12-17
-  2024-12-18
+  2024-12 # #
+  2025-08-19
 */

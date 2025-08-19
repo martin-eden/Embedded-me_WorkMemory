@@ -2,7 +2,7 @@
 
 /*
   Author: Martin Eden
-  Last mod.: 2025-08-14
+  Last mod.: 2025-08-19
 */
 
 #include <me_WorkMemory.h>
@@ -24,14 +24,14 @@ void RunTest()
   SourceByteValue = 1;
 
   // Get byte
-  me_WorkMemory::GetByte(&ResultByteValue, SourceValueAddr);
+  me_WorkMemory::GetByteFrom(&ResultByteValue, SourceValueAddr);
   Console.Write("Read value is");
   Console.Print(ResultByteValue);
   Console.EndLine();
 
   // Set byte
   SourceByteValue = 2;
-  me_WorkMemory::SetByte(SourceByteValue, ResultValueAddr);
+  me_WorkMemory::SetByteTo(ResultValueAddr, SourceByteValue);
   Console.Write("Write value is");
   Console.Print(ResultByteValue);
   Console.EndLine();
@@ -47,7 +47,7 @@ void setup()
   RunTest();
 
   Console.Unindent();
-  Console.Print(")");
+  Console.Print(") Done");
 }
 
 void loop()

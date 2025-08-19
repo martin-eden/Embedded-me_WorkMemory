@@ -1,8 +1,8 @@
-// WorkMemory
+// Work memory (SRAM)
 
 /*
   Author: Martin Eden
-  Last mod.: 2024-12-18
+  Last mod.: 2025-08-19
 */
 
 /*
@@ -10,9 +10,9 @@
 
   Wtf?
 
-  Whole point of C is to provide better means than
-  accessing bytes by address. But we want get/set
-  functions for working memory too.
+  Whole point of C is provide better means than accessing byte
+  by address. But we have generic getters/setters doing byte
+  by address.
 */
 
 #pragma once
@@ -21,24 +21,28 @@
 
 namespace me_WorkMemory
 {
-  // ( Memory limits (microprocessor-dependent)
-  const TUint_2 Size = 256 + 2 * 1024;
-  const TAddress MaxAddr = Size - 1;
-  // )
+  // Check address
+  TBool CheckAddress(TAddress Address);
 
-  // Get byte from memory
-  TBool GetByte(TUint_1 * Byte, TAddress Addr);
+  // Get byte by address
+  TBool GetByteFrom(TUint_1 * ByteValue, TAddress Address);
 
-  // Set memory to byte value
-  TBool SetByte(TUint_1 Byte, TAddress Addr);
+  // Set byte at address
+  TBool SetByteTo(TAddress Address, TUint_1 ByteValue);
 
   // ( Wrapping as TOperation
-  TBool Op_GetByte(TAddress Data, TAddress Addr);
-  TBool Op_SetByte(TAddress Data, TAddress Addr);
+  TBool Op_GetByte(TAddress Data, TAddress Address);
+  TBool Op_SetByte(TAddress Data, TAddress Address);
   // )
+
+  namespace Freetown
+  {
+    void GetByteFrom(TUint_1 * ByteValue, TAddress Address);
+    void SetByteTo(TAddress Address, TUint_1 ByteValue);
+  }
 }
 
 /*
-  2024-12-17
-  2024-12-18
+  2024-12 # #
+  2025-08-19 renames, founded Freetown
 */
