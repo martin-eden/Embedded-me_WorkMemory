@@ -13,14 +13,16 @@ We want unit getter and setter functions. For anything where
 2-byte address makes sense. eeprom, flash, sram.
 
 ```C++
-TBool GetByte(TUint_1 * Byte, TAddress Addr);
-TBool SetByte(TUint_1 Byte, TAddress Addr);
+TBool CheckAddress(TAddress Address);
+TBool GetByteFrom(TUint_1 * Byte, TAddress Addr);
+TBool SetByteTo(TAddress Addr, TUint_1 Byte);
 ```
 
 ## Code
 
 * [Interface][Interface]
 * [Implementation][Implementation]
+* [Example][Example]
 
 
 ## Requirements
@@ -42,6 +44,7 @@ Lacking of local repo catalogue in Arduino IDE sucks.
 
 [Interface]: src/me_WorkMemory.h
 [Implementation]: src/me_WorkMemory.cpp
+[Example]: examples/me_WorkMemory/me_WorkMemory.ino
 
 [GetLibs]: https://github.com/martin-eden/Embedded-Framework-GetLibs
 
