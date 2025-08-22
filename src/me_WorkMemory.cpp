@@ -2,10 +2,12 @@
 
 /*
   Author: Martin Eden
-  Last mod.: 2025-08-19
+  Last mod.: 2025-08-22
 */
 
 #include <me_WorkMemory.h>
+
+#include <me_BaseTypes.h>
 
 using namespace me_WorkMemory;
 
