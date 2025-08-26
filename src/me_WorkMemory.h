@@ -2,7 +2,7 @@
 
 /*
   Author: Martin Eden
-  Last mod.: 2025-08-19
+  Last mod.: 2025-08-26
 */
 
 /*
@@ -28,7 +28,7 @@ namespace me_WorkMemory
   TBool GetByteFrom(TUint_1 * ByteValue, TAddress Address);
 
   // Set byte at address
-  TBool SetByteTo(TAddress Address, TUint_1 ByteValue);
+  TBool SetByteAt(TAddress Address, TUint_1 ByteValue);
 
   // ( Wrapping as TOperation
   TBool Op_GetByte(TAddress Data, TAddress Address);
@@ -38,11 +38,12 @@ namespace me_WorkMemory
   namespace Freetown
   {
     void GetByteFrom(TUint_1 * ByteValue, TAddress Address);
-    void SetByteTo(TAddress Address, TUint_1 ByteValue);
+    void SetByteAt(TAddress Address, TUint_1 ByteValue);
   }
 }
 
 /*
   2024-12 # #
   2025-08-19 renames, founded Freetown
+  2025-08-26 renamings
 */

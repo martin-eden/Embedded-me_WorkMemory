@@ -43,7 +43,7 @@ TBool me_WorkMemory::GetByteFrom(
 /*
   Set byte at address
 */
-TBool me_WorkMemory::SetByteTo(
+TBool me_WorkMemory::SetByteAt(
   TAddress Address,
   TUint_1 ByteValue
 )
@@ -51,7 +51,7 @@ TBool me_WorkMemory::SetByteTo(
   if (!CheckAddress(Address))
     return false;
 
-  Freetown::SetByteTo(Address, ByteValue);
+  Freetown::SetByteAt(Address, ByteValue);
 
   return true;
 }
@@ -71,7 +71,7 @@ TBool me_WorkMemory::Op_SetByte(
   TAddress Address
 )
 {
-  return SetByteTo(Address, *(TUint_1 *) Data);
+  return SetByteAt(Address, *(TUint_1 *) Data);
 }
 
 // )

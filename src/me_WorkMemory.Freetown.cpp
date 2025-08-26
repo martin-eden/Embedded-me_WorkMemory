@@ -2,7 +2,7 @@
 
 /*
   Author: Martin Eden
-  Last mod.: 2025-08-19
+  Last mod.: 2025-08-26
 */
 
 #include <me_WorkMemory.h>
@@ -21,9 +21,9 @@ void Freetown::GetByteFrom(
 }
 
 /*
-  Set byte by address
+  Set byte at address
 */
-void Freetown::SetByteTo(
+void Freetown::SetByteAt(
   TAddress Address,
   TUint_1 ByteValue
 )
@@ -34,4 +34,5 @@ void Freetown::SetByteTo(
 /*
   2024-12 # #
   2025-08-19
+  2025-08-26
 */
