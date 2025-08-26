@@ -18,6 +18,8 @@
 #pragma once
 
 #include <me_BaseTypes.h>
+#include <me_Streams.h>
+#include <me_MemorySegment.h>
 
 namespace me_WorkMemory
 {
@@ -35,6 +37,35 @@ namespace me_WorkMemory
   TBool Op_SetByte(TAddress Data, TAddress Address);
   // )
 
+  // ( Wrapping input/output as streams
+
+  // Address segment as input stream
+  class TInputStream : public me_Streams::IInputStream
+  {
+    public:
+      TBool Init(me_MemorySegment::TMemorySegment MemSeg);
+
+      TBool Read(TUnit * Unit) override;
+
+    private:
+      me_MemorySegment::TSegmentIterator Rator;
+  };
+
+  // Address segment as output stream
+  class TOutputStream : public me_Streams::IOutputStream
+  {
+    public:
+      TBool Init(me_MemorySegment::TMemorySegment MemSeg);
+
+      TBool Write(TUnit Unit) override;
+
+    private:
+      me_MemorySegment::TSegmentIterator Rator;
+  };
+
+  // )
+
+  // Core functions
   namespace Freetown
   {
     void GetByteFrom(TUint_1 * ByteValue, TAddress Address);
