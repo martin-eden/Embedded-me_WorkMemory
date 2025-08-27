@@ -2,7 +2,7 @@
 
 /*
   Author: Martin Eden
-  Last mod.: 2025-08-26
+  Last mod.: 2025-08-27
 */
 
 /*
@@ -18,7 +18,7 @@
 #pragma once
 
 #include <me_BaseTypes.h>
-#include <me_Streams.h>
+#include <me_BaseInterfaces.h>
 #include <me_MemorySegment.h>
 
 namespace me_WorkMemory
@@ -40,7 +40,7 @@ namespace me_WorkMemory
   // ( Wrapping input/output as streams
 
   // Address segment as input stream
-  class TInputStream : public me_Streams::IInputStream
+  class TInputStream : public IInputStream
   {
     public:
       TBool Init(me_MemorySegment::TMemorySegment MemSeg);
@@ -52,7 +52,7 @@ namespace me_WorkMemory
   };
 
   // Address segment as output stream
-  class TOutputStream : public me_Streams::IOutputStream
+  class TOutputStream : public IOutputStream
   {
     public:
       TBool Init(me_MemorySegment::TMemorySegment MemSeg);
