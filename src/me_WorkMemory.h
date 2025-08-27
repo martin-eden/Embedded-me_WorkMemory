@@ -43,7 +43,7 @@ namespace me_WorkMemory
   class TInputStream : public IInputStream
   {
     public:
-      TBool Init(me_MemorySegment::TMemorySegment MemSeg);
+      TBool Init(TAddressSegment MemSeg);
 
       TBool Read(TUnit * Unit) override;
 
@@ -55,7 +55,7 @@ namespace me_WorkMemory
   class TOutputStream : public IOutputStream
   {
     public:
-      TBool Init(me_MemorySegment::TMemorySegment MemSeg);
+      TBool Init(TAddressSegment MemSeg);
 
       TBool Write(TUnit Unit) override;
 

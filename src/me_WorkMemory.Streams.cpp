@@ -2,13 +2,12 @@
 
 /*
   Author: Martin Eden
-  Last mod.: 2025-08-26
+  Last mod.: 2025-08-27
 */
 
 #include <me_WorkMemory.h>
 
 #include <me_BaseTypes.h>
-#include <me_MemorySegment.h>
 
 using namespace me_WorkMemory;
 
@@ -18,7 +17,7 @@ using namespace me_WorkMemory;
   Setup
 */
 TBool TInputStream::Init(
-  me_MemorySegment::TMemorySegment MemSeg
+  TAddressSegment MemSeg
 )
 {
   return Rator.Init(MemSeg);
@@ -47,7 +46,7 @@ TBool TInputStream::Read(
   Setup
 */
 TBool TOutputStream::Init(
-  me_MemorySegment::TMemorySegment MemSeg
+  TAddressSegment MemSeg
 )
 {
   return Rator.Init(MemSeg);
