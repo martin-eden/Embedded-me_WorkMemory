@@ -19,7 +19,6 @@
 
 #include <me_BaseTypes.h>
 #include <me_BaseInterfaces.h>
-#include <me_MemorySegment.h>
 
 namespace me_WorkMemory
 {
@@ -48,7 +47,7 @@ namespace me_WorkMemory
       TBool Read(TUnit * Unit) override;
 
     private:
-      me_MemorySegment::TSegmentIterator Rator;
+      TAddressIterator Rator;
   };
 
   // Address segment as output stream
@@ -60,7 +59,7 @@ namespace me_WorkMemory
       TBool Write(TUnit Unit) override;
 
     private:
-      me_MemorySegment::TSegmentIterator Rator;
+      TAddressIterator Rator;
   };
 
   // )

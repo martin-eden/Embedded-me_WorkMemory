@@ -2,7 +2,7 @@
 
 /*
   Author: Martin Eden
-  Last mod.: 2025-08-27
+  Last mod.: 2025-08-28
 */
 
 #include <me_WorkMemory.h>
@@ -17,10 +17,10 @@ using namespace me_WorkMemory;
   Setup
 */
 TBool TInputStream::Init(
-  TAddressSegment MemSeg
+  TAddressSegment AddrSeg
 )
 {
-  return Rator.Init(MemSeg);
+  return Rator.Init(AddrSeg);
 }
 
 /*
@@ -46,10 +46,10 @@ TBool TInputStream::Read(
   Setup
 */
 TBool TOutputStream::Init(
-  TAddressSegment MemSeg
+  TAddressSegment AddrSeg
 )
 {
-  return Rator.Init(MemSeg);
+  return Rator.Init(AddrSeg);
 }
 
 /*
