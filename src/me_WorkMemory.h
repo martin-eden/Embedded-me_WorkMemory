@@ -2,16 +2,16 @@
 
 /*
   Author: Martin Eden
-  Last mod.: 2025-08-27
+  Last mod.: 2025-08-29
 */
 
 /*
   Get byte from RAM. Set byte in RAM.
 
-  Wtf?
+  Why?
 
   Whole point of C is provide better means than accessing byte
-  by address. But we have generic getters/setters doing byte
+  by address. But we have generic getters/setters doing byte operations
   by address.
 */
 
@@ -22,49 +22,13 @@
 
 namespace me_WorkMemory
 {
-  // Check address
-  TBool CheckAddress(TAddress Address);
-
   // Get byte by address
   TBool GetByteFrom(TUint_1 * ByteValue, TAddress Address);
 
   // Set byte at address
   TBool SetByteAt(TAddress Address, TUint_1 ByteValue);
 
-  // ( Wrapping as TOperation
-  TBool Op_GetByte(TAddress Data, TAddress Address);
-  TBool Op_SetByte(TAddress Data, TAddress Address);
-  // )
-
-  // ( Wrapping input/output as streams
-
-  // Address segment as input stream
-  class TInputStream : public IInputStream
-  {
-    public:
-      TBool Init(TAddressSegment MemSeg);
-
-      TBool Read(TUnit * Unit) override;
-
-    private:
-      TAddressIterator Rator;
-  };
-
-  // Address segment as output stream
-  class TOutputStream : public IOutputStream
-  {
-    public:
-      TBool Init(TAddressSegment MemSeg);
-
-      TBool Write(TUnit Unit) override;
-
-    private:
-      TAddressIterator Rator;
-  };
-
-  // )
-
-  // Core functions
+  // Core functions without checks
   namespace Freetown
   {
     void GetByteFrom(TUint_1 * ByteValue, TAddress Address);
@@ -74,6 +38,7 @@ namespace me_WorkMemory
 
 /*
   2024-12 # #
-  2025-08-19 renames, founded Freetown
-  2025-08-26 renamings
+  2025-08-19 Renamings, Freetown founded
+  2025-08-26 Renamings
+  2025-08-29 Interface stripping
 */

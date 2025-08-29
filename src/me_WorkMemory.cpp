@@ -17,7 +17,7 @@ const TAddress MaxAddress = (256 + 2 * 1024) - 1;
 /*
   Check memory address
 */
-TBool me_WorkMemory::CheckAddress(
+TBool CheckAddress(
   TAddress Address
 )
 {
@@ -56,27 +56,8 @@ TBool me_WorkMemory::SetByteAt(
   return true;
 }
 
-// ( TOperation wrappers
-
-TBool me_WorkMemory::Op_GetByte(
-  TAddress Data,
-  TAddress Address
-)
-{
-  return GetByteFrom((TUint_1 *) Data, Address);
-}
-
-TBool me_WorkMemory::Op_SetByte(
-  TAddress Data,
-  TAddress Address
-)
-{
-  return SetByteAt(Address, *(TUint_1 *) Data);
-}
-
-// )
-
 /*
   2024-12 # #
   2025-08-19
+  2025-08-29
 */
