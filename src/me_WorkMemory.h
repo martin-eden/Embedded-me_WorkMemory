@@ -31,7 +31,7 @@ namespace me_WorkMemory
   // Core functions without checks
   namespace Freetown
   {
-    void GetByteFrom(TUint_1 * ByteValue, TAddress Address);
+    TUint_1 GetByteFrom(TAddress Address);
     void SetByteAt(TAddress Address, TUint_1 ByteValue);
   }
 }

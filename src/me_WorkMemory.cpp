@@ -35,7 +35,7 @@ TBool me_WorkMemory::GetByteFrom(
   if (!CheckAddress(Address))
     return false;
 
-  Freetown::GetByteFrom(ByteValue, Address);
+  *ByteValue = Freetown::GetByteFrom(Address);
 
   return true;
 }

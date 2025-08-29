@@ -2,7 +2,7 @@
 
 /*
   Author: Martin Eden
-  Last mod.: 2025-08-28
+  Last mod.: 2025-08-29
 */
 
 #include <me_WorkMemory.h>
@@ -14,12 +14,11 @@ using namespace me_WorkMemory;
 /*
   Get byte by address
 */
-void Freetown::GetByteFrom(
-  TUint_1 * ByteValue,
+TUint_1 Freetown::GetByteFrom(
   TAddress Address
 )
 {
-  *ByteValue = *(TUint_1 *) Address;
+  return *(TUint_1 *) Address;
 }
 
 /*
