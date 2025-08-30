@@ -7,17 +7,6 @@ Part of from my AVR toolset.
 Get byte from RAM. Set byte in RAM.
 
 
-## Design
-
-We want unit getter and setter functions. For anything where
-2-byte address makes sense. eeprom, flash, sram.
-
-```C++
-TBool CheckAddress(TAddress Address);
-TBool GetByteFrom(TUint_1 * Byte, TAddress Addr);
-TBool SetByteTo(TAddress Addr, TUint_1 Byte);
-```
-
 ## Code
 
 * [Interface][Interface]
@@ -34,7 +23,6 @@ TBool SetByteTo(TAddress Addr, TUint_1 Byte);
 ## Install/remove
 
 Easy way is to clone [GetLibs][GetLibs] repo and run it's code.
-Lacking of local repo catalogue in Arduino IDE sucks.
 
 
 ## See also

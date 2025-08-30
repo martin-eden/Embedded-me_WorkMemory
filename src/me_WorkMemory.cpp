@@ -2,7 +2,7 @@
 
 /*
   Author: Martin Eden
-  Last mod.: 2025-08-28
+  Last mod.: 2025-08-30
 */
 
 #include <me_WorkMemory.h>
@@ -10,19 +10,6 @@
 #include <me_BaseTypes.h>
 
 using namespace me_WorkMemory;
-
-// Maximum memory address (for ATmega328)
-const TAddress MaxAddress = (256 + 2 * 1024) - 1;
-
-/*
-  Check memory address
-*/
-TBool CheckAddress(
-  TAddress Address
-)
-{
-  return (Address <= MaxAddress);
-}
 
 /*
   Get byte from address
@@ -32,7 +19,7 @@ TBool me_WorkMemory::GetByteFrom(
   TAddress Address
 )
 {
-  if (!CheckAddress(Address))
+  if (!Freetown::CheckAddress(Address))
     return false;
 
   *ByteValue = Freetown::GetByteFrom(Address);
@@ -48,7 +35,7 @@ TBool me_WorkMemory::SetByteAt(
   TUint_1 ByteValue
 )
 {
-  if (!CheckAddress(Address))
+  if (!Freetown::CheckAddress(Address))
     return false;
 
   Freetown::SetByteAt(Address, ByteValue);

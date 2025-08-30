@@ -2,7 +2,7 @@
 
 /*
   Author: Martin Eden
-  Last mod.: 2025-08-29
+  Last mod.: 2025-08-30
 */
 
 /*
@@ -18,7 +18,6 @@
 #pragma once
 
 #include <me_BaseTypes.h>
-#include <me_BaseInterfaces.h>
 
 namespace me_WorkMemory
 {
@@ -31,6 +30,7 @@ namespace me_WorkMemory
   // Core functions without checks
   namespace Freetown
   {
+    TBool CheckAddress(TAddress Address);
     TUint_1 GetByteFrom(TAddress Address);
     void SetByteAt(TAddress Address, TUint_1 ByteValue);
   }
@@ -41,4 +41,5 @@ namespace me_WorkMemory
   2025-08-19 Renamings, Freetown founded
   2025-08-26 Renamings
   2025-08-29 Interface stripping
+  2025-08-30
 */
