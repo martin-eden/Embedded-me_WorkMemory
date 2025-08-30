@@ -31,7 +31,17 @@ TUint_1 Freetown::GetByteFrom(
   TAddress Address
 )
 {
-  return *(TUint_1 *) Address;
+  TUint_1 Result;
+
+  asm (
+    "ld %[Result], Z"
+    : [Result] "=r" (Result)
+    : "z" (Address)
+  );
+
+  return Result;
+
+  // Or just use "return *(TUint_1 *) Address;"
 }
 
 /*
@@ -42,11 +52,19 @@ void Freetown::SetByteAt(
   TUint_1 ByteValue
 )
 {
-  *(TUint_1 *) Address = ByteValue;
+  asm (
+    "st Z, %[ByteValue]"
+    :
+    : [ByteValue] "r" (ByteValue),
+      "z" (Address)
+  );
+
+  // Or just use "*(TUint_1 *) Address = ByteValue;"
 }
 
 /*
   2024-12 # #
   2025-08-19
   2025-08-26
+  2025-08-30
 */
