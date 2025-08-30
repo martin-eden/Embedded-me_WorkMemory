@@ -1,18 +1,8 @@
-// Work memory (SRAM)
+// Adapting work memory (SRAM) access to TOperation
 
 /*
   Author: Martin Eden
   Last mod.: 2025-08-30
-*/
-
-/*
-  Get byte from RAM. Set byte in RAM.
-
-  Why?
-
-  Whole point of C is provide better means than accessing byte
-  by address. But we have generic getters/setters doing byte operations
-  by address.
 */
 
 #pragma once
@@ -21,10 +11,10 @@
 
 namespace me_WorkMemory
 {
-  // Get byte by address
+  // [TOperation] Get byte by address
   TBool GetByteFrom(TUint_1 * ByteValue, TAddress Address);
 
-  // Set byte at address
+  // [TOperation] Set byte at address
   TBool SetByteAt(TAddress Address, TUint_1 ByteValue);
 
   // Core functions without checks
