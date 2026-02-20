@@ -12,6 +12,19 @@
 using namespace me_WorkMemory;
 
 /*
+  Check memory address
+*/
+TBool me_WorkMemory::CheckAddress(
+  TAddress Address
+)
+{
+  // Maximum memory address (for ATmega328)
+  const TAddress MaxAddress = (256 + 2 * 1024) - 1;
+
+  return (Address <= MaxAddress);
+}
+
+/*
   Get byte from address
 */
 TBool me_WorkMemory::GetByteFrom(
@@ -19,7 +32,7 @@ TBool me_WorkMemory::GetByteFrom(
   TAddress Address
 )
 {
-  if (!Freetown::CheckAddress(Address))
+  if (!CheckAddress(Address))
     return false;
 
   *ByteValue = Freetown::GetByteFrom(Address);
@@ -35,16 +48,16 @@ TBool me_WorkMemory::SetByteAt(
   TUint_1 ByteValue
 )
 {
-  if (!Freetown::CheckAddress(Address))
+  if (!CheckAddress(Address))
     return false;
 
-  Freetown::SetByteAt(Address, ByteValue);
+  SetByteAt(Address, ByteValue);
 
   return true;
 }
 
 /*
-  2024-12 # #
-  2025-08-19
-  2025-08-29
+  2024 # #
+  2025 # #
+  2026-02-20
 */
