@@ -2,7 +2,7 @@
 
 /*
   Author: Martin Eden
-  Last mod.: 2025-08-30
+  Last mod.: 2026-03-03
 */
 
 #include <me_WorkMemory.h>
@@ -51,7 +51,7 @@ TBool me_WorkMemory::SetByteAt(
   if (!CheckAddress(Address))
     return false;
 
-  SetByteAt(Address, ByteValue);
+  Freetown::SetByteAt(Address, ByteValue);
 
   return true;
 }
