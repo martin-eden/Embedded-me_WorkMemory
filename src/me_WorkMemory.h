@@ -2,7 +2,7 @@
 
 /*
   Author: Martin Eden
-  Last mod.: 2025-08-30
+  Last mod.: 2026-03-30
 */
 
 #pragma once
@@ -11,9 +11,6 @@
 
 namespace me_WorkMemory
 {
-  // Check memory address
-  TBool CheckAddress(TAddress Address);
-
   // [TOperation] Get byte by address
   TBool GetByteFrom(TUint_1 * ByteValue, TAddress Address);
 
@@ -23,6 +20,7 @@ namespace me_WorkMemory
   // Core functions without checks
   namespace Freetown
   {
+    TBool CheckAddress(TAddress Address);
     TUint_1 GetByteFrom(TAddress Address);
     void SetByteAt(TAddress Address, TUint_1 ByteValue);
   }
@@ -32,4 +30,5 @@ namespace me_WorkMemory
   2024 # #
   2025 # # # #
   2026-02-20
+  2026-03-30
 */
