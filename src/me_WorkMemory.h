@@ -2,7 +2,7 @@
 
 /*
   Author: Martin Eden
-  Last mod.: 2026-03-30
+  Last mod.: 2026-03-31
 */
 
 #pragma once
@@ -17,12 +17,17 @@ namespace me_WorkMemory
   // [TOperation] Set byte at address
   TBool SetByteAt(TAddress Address, TUint_1 ByteValue);
 
-  // Core functions without checks
-  namespace Freetown
+  namespace Description
   {
+    const TAddress MaxAddress = (256 + 2 * 1024) - 1;
+
     TBool CheckAddress(TAddress Address);
-    TUint_1 GetByteFrom(TAddress Address);
-    void SetByteAt(TAddress Address, TUint_1 ByteValue);
+  }
+
+  namespace Core
+  {
+    void GetByteFrom(TAddress DataPtr, TAddress);
+    void SetByteAt(TAddress DataPtr, TAddress);
   }
 }
 
@@ -31,4 +36,5 @@ namespace me_WorkMemory
   2025 # # # #
   2026-02-20
   2026-03-30
+  2026-03-31
 */

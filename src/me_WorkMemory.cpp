@@ -2,7 +2,7 @@
 
 /*
   Author: Martin Eden
-  Last mod.: 2026-03-30
+  Last mod.: 2026-03-31
 */
 
 #include <me_WorkMemory.h>
@@ -19,10 +19,10 @@ TBool me_WorkMemory::GetByteFrom(
   TAddress Address
 )
 {
-  if (!Freetown::CheckAddress(Address))
+  if (!Description::CheckAddress(Address))
     return false;
 
-  *ByteValue = Freetown::GetByteFrom(Address);
+  Core::GetByteFrom((TAddress) ByteValue, Address);
 
   return true;
 }
@@ -35,10 +35,10 @@ TBool me_WorkMemory::SetByteAt(
   TUint_1 ByteValue
 )
 {
-  if (!Freetown::CheckAddress(Address))
+  if (!Description::CheckAddress(Address))
     return false;
 
-  Freetown::SetByteAt(Address, ByteValue);
+  Core::SetByteAt((TAddress) &ByteValue, Address);
 
   return true;
 }
