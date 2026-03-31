@@ -11,6 +11,7 @@
 
 using namespace me_WorkMemory;
 
+// [Internal] Copy byte
 static void LoadByteFrom(
   TAddress DestPtr,
   TAddress SrcPtr
