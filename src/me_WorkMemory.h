@@ -16,7 +16,9 @@ namespace me_WorkMemory
 
   namespace Description
   {
-    const TAddress MaxAddress = (256 + 2 * 1024) - 1;
+    const TUint_2 Size = 256 + 2 * 1024;
+    const TAddress MaxAddress = Size - 1;
+    const TAddressSegment Segment = { .Addr = 0, .Size = Size };
 
     TBool CheckAddress(TAddress Address);
   }
