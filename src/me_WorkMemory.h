@@ -11,10 +11,7 @@
 
 namespace me_WorkMemory
 {
-  // [TOperation] Get byte by address
   TBool GetByteFrom(TUint_1 * ByteValue, TAddress Address);
-
-  // [TOperation] Set byte at address
   TBool SetByteAt(TAddress Address, TUint_1 ByteValue);
 
   namespace Description
